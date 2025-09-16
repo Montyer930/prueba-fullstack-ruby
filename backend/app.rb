@@ -25,7 +25,7 @@ CLIENTS = [
     city: 'Bogota'
   },
   {
-    document_type: 'pp',
+    document_type: 'PP',
     document_number: '9256781234',
     first_name: 'Andres',
     last_name: 'Rodriguez',
@@ -35,7 +35,7 @@ CLIENTS = [
     city: 'Medellin'
   },
   {
-    document_type: 'pp',
+    document_type: 'PP',
     document_number: '4567890123',
     first_name: 'Sara',
     last_name: 'Lopez',
