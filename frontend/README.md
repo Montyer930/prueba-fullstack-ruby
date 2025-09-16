@@ -37,4 +37,3 @@ Vite abrira la aplicacion en `http://localhost:5173/` (puedes copiar el enlace q
 ## Personalizacion
 
 - Agrega o edita clientes en `src/data/clients.json` respetando los campos existentes.
-- Ajusta estilos globales en `src/main.css` o agrega clases auxiliares en los componentes.
