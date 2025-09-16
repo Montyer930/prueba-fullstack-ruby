@@ -6,6 +6,11 @@ Prueba técnica Fullstack con Ruby (Backend y Frontend)
 - **Frontend**: Aplicación React/Vite que consume los datos y presenta la interfaz.
 - **Ejercicios**: Scripts y microservicios Ruby resueltos como parte de la prueba.
 
+### Actualizaciones recientes
+- Unificamos la estructura de clientes del backend para reflejar la que utiliza el frontend y expusimos los endpoints `GET /clientes` y `GET /clientes/:document_type/:document_number`.
+- Se agregaron cabeceras CORS y configuración de host/puerto para facilitar el consumo desde el frontend.
+- El frontend dejó de usar la fuente estática y ahora realiza peticiones `fetch` contra el backend mediante `src/utils/api.js`, mostrando estados de carga y mensajes de error según la respuesta.
+
 ## Estructura del proyecto
 
 ```

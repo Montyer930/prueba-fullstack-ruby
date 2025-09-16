@@ -9,13 +9,7 @@ Aplicacion en React que consulta informacion basica de clientes consumiendo el s
 
 ## Variables de entorno
 
-Crea un archivo `.env` en la carpeta `frontend` si deseas personalizar la URL del backend:
-
-```
-VITE_API_URL=http://localhost:4567
-```
-
-Si no defines la variable, la aplicacion usara `http://localhost:4567` por defecto.
+la aplicacion usara `http://localhost:4567` por defecto.
 
 ## Ejecucion en modo desarrollo
 
