@@ -56,7 +56,6 @@ prueba-fullstack-ruby/
 ## Pruebas y validaciones
 - Backend: consultas manuales con `curl` o Postman (ver README específico).
 - Frontend: guía de pruebas manuales disponible en `frontend/README.md`.
-- Se pueden añadir suites automatizadas (RSpec/Jest) en futuras iteraciones; documenta aquí cómo ejecutarlas cuando existan.
 
 ## Documentación adicional
 - `backend/README.md`: detalles del servicio Sinatra, endpoints y ejemplos.
