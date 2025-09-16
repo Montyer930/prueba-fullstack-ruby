@@ -2,8 +2,7 @@
 
 source "https://rubygems.org"
 
-# gem "rails"
-
-# Gems
-gem 'sinatra'
-gem 'json'
+gem "sinatra"
+gem "json"
+gem "puma"
+gem "rackup"
