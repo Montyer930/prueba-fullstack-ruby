@@ -1,0 +1,32 @@
+[
+  {
+    "documentType": "CC",
+    "documentNumber": "1012345678",
+    "firstName": "Laura",
+    "lastName": "Perez",
+    "email": "laura.perez@example.com",
+    "phone": "6014567890",
+    "address": "Calle 123 #45-67",
+    "city": "Bogota"
+  },
+  {
+    "documentType": "CC",
+    "documentNumber": "9256781234",
+    "firstName": "Andres",
+    "lastName": "Rodriguez",
+    "email": "andres.rodriguez@example.com",
+    "phone": "3004567788",
+    "address": "Carrera 7 #89-10",
+    "city": "Medellin"
+  },
+  {
+    "documentType": "PP",
+    "documentNumber": "4567890123",
+    "firstName": "Sara",
+    "lastName": "Lopez",
+    "email": "sara.lopez@example.com",
+    "phone": "5719876543",
+    "address": "Avenida Central 99",
+    "city": "Cartagena"
+  }
+]

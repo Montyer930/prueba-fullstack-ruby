@@ -1,0 +1,15 @@
+:root {
+  color-scheme: light;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fb;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f7fb;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
