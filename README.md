@@ -53,9 +53,6 @@ prueba-fullstack-ruby/
 - Frontend: `cd frontend && npm run dev` (en `http://localhost:5173`).
 - Ejercicios CLI: ejecuta los scripts desde `ejercicios/` como se describe en su README.
 
-## Variables de entorno
-Actualmente no se requieren variables de entorno. Si agregas configuraciones sensibles, documenta aquí su nombre, propósito y archivos `.env` asociados.
-
 ## Pruebas y validaciones
 - Backend: consultas manuales con `curl` o Postman (ver README específico).
 - Frontend: guía de pruebas manuales disponible en `frontend/README.md`.
