@@ -12,10 +12,20 @@ CLIENTS = [
     email: 'laura.perez@example.com',
     phone: '6014567890',
     address: 'Calle 123 #45-67',
+    city: 'barrancabermeja'
+  },
+    {
+    document_type: 'CC',
+    document_number: '1018491737',
+    first_name: 'yerson',
+    last_name: 'Montes',
+    email: 'yerson.montes@example.com',
+    phone: '3197318001',
+    address: 'Calle 123 #45-67',
     city: 'Bogota'
   },
   {
-    document_type: 'CC',
+    document_type: 'pp',
     document_number: '9256781234',
     first_name: 'Andres',
     last_name: 'Rodriguez',
@@ -38,8 +48,14 @@ CLIENTS = [
 
 ALLOWED_DOCUMENT_TYPES = CLIENTS.map { |client| client[:document_type] }.uniq.freeze
 
+set :bind, ENV.fetch('APP_HOST', '0.0.0.0')
+set :port, ENV.fetch('APP_PORT', 4567)
+
 before do
   content_type :json
+  response.headers['Access-Control-Allow-Origin'] = ENV.fetch('ALLOWED_ORIGINS', '*')
+  response.headers['Access-Control-Allow-Methods'] = 'GET,OPTIONS'
+  response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Accept'
 end
 
 helpers do
@@ -102,6 +118,10 @@ get '/cliente' do
 rescue StandardError => e
   status 500
   { error: 'Error interno del servidor', detalle: e.message }.to_json
+end
+
+options '*' do
+  204
 end
 
 get '/clientes' do

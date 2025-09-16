@@ -1,31 +1,39 @@
 import { useState } from 'react';
 import SearchForm from './components/SearchForm.jsx';
 import SummaryView from './components/SummaryView.jsx';
-import clientsData from './data/clients.json';
+import { fetchClient } from './utils/api.js';
 
 function App() {
   const [currentView, setCurrentView] = useState('search');
   const [activeClient, setActiveClient] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [lastQuery, setLastQuery] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSearch = ({ documentType, documentNumber }) => {
+  const handleSearch = async ({ documentType, documentNumber }) => {
     setLastQuery({ documentType, documentNumber });
+    setFeedbackMessage('');
+    setIsLoading(true);
 
-    const match = clientsData.find(
-      (client) => client.documentType === documentType && client.documentNumber === documentNumber,
-    );
+    try {
+      const { data, errorMessage, status } = await fetchClient({ documentType, documentNumber });
 
-    if (match) {
-      setActiveClient(match);
-      setCurrentView('summary');
-      setFeedbackMessage('');
-      return;
+      if (status === 200 && data) {
+        setActiveClient(data);
+        setCurrentView('summary');
+        return;
+      }
+
+      setActiveClient(null);
+      setCurrentView('search');
+      setFeedbackMessage(errorMessage || 'No encontramos informacion con los datos ingresados. Verifica e intentalo nuevamente.');
+    } catch (error) {
+      setActiveClient(null);
+      setCurrentView('search');
+      setFeedbackMessage(error.message || 'Ocurrio un error inesperado. Intentalo nuevamente.');
+    } finally {
+      setIsLoading(false);
     }
-
-    setActiveClient(null);
-    setCurrentView('search');
-    setFeedbackMessage('No encontramos informacion con los datos ingresados. Verifica e intentalo nuevamente.');
   };
 
   const handleBack = () => {
@@ -43,6 +51,7 @@ function App() {
       onSearch={handleSearch}
       feedbackMessage={feedbackMessage}
       initialQuery={lastQuery}
+      isLoading={isLoading}
     />
   );
 }

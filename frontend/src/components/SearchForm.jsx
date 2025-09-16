@@ -6,7 +6,7 @@ const DOCUMENT_OPTIONS = [
   { value: 'PP', label: 'Pasaporte' },
 ];
 
-function SearchForm({ onSearch, feedbackMessage, initialQuery }) {
+function SearchForm({ onSearch, feedbackMessage, initialQuery, isLoading }) {
   const [documentType, setDocumentType] = useState(initialQuery?.documentType ?? '');
   const [documentNumber, setDocumentNumber] = useState(initialQuery?.documentNumber ?? '');
   const [numberTouched, setNumberTouched] = useState(false);
@@ -18,7 +18,8 @@ function SearchForm({ onSearch, feedbackMessage, initialQuery }) {
   }, [initialQuery?.documentType, initialQuery?.documentNumber]);
 
   const isNumberValid = documentNumber.length >= 8 && documentNumber.length <= 11;
-  const isButtonEnabled = documentType !== '' && isNumberValid;
+  const isFormValid = documentType !== '' && isNumberValid;
+  const isButtonEnabled = isFormValid && !isLoading;
 
   const handleNumberChange = (event) => {
     const digitsOnly = event.target.value.replace(/\D/g, '');
@@ -29,7 +30,7 @@ function SearchForm({ onSearch, feedbackMessage, initialQuery }) {
     event.preventDefault();
     setNumberTouched(true);
 
-    if (!isButtonEnabled) {
+    if (!isFormValid || isLoading) {
       return;
     }
 
@@ -108,7 +109,7 @@ function SearchForm({ onSearch, feedbackMessage, initialQuery }) {
               disabled={!isButtonEnabled}
               style={buttonStyles}
             >
-              Buscar
+              {isLoading ? 'Buscando...' : 'Buscar'}
             </button>
           </form>
         </div>
