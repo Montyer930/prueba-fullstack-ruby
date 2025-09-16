@@ -38,7 +38,7 @@ prueba-fullstack-ruby/
 ```
 
 ## Requisitos previos
-- Ruby 3.x y Bundler instalado globalmente.
+- Ruby 3.x (probado con Ruby 3.1.2p20) y Bundler instalado globalmente.
 - Node.js 18+ y npm 9+ para el frontend.
 - cURL o Postman para probar servicios HTTP.
 
@@ -61,4 +61,3 @@ prueba-fullstack-ruby/
 - `backend/README.md`: detalles del servicio Sinatra, endpoints y ejemplos.
 - `frontend/README.md`: guía de ejecución, componentes clave y pruebas manuales.
 - `ejercicios/README.md`: instrucciones para cada ejercicio Ruby.
-
