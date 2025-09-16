@@ -50,7 +50,7 @@ prueba-fullstack-ruby/
 
 ## Ejecución rápida
 - Backend: `cd backend && bundle exec ruby app.rb` (Sinatra en `http://localhost:4567`).
-- Frontend: `cd frontend && npm run dev` (Vite en `http://localhost:5173`).
+- Frontend: `cd frontend && npm run dev` (en `http://localhost:5173`).
 - Ejercicios CLI: ejecuta los scripts desde `ejercicios/` como se describe en su README.
 
 ## Variables de entorno
