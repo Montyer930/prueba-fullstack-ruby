@@ -35,7 +35,7 @@ CLIENTS = [
     city: 'Medellin'
   },
   {
-    document_type: 'PP',
+    document_type: 'pp',
     document_number: '4567890123',
     first_name: 'Sara',
     last_name: 'Lopez',
